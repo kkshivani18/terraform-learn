@@ -1,2 +1,3 @@
-# terraform-learn
-Notes about Terraform. 
+# Learning about Terraform
+
+- Notes about Terraform
