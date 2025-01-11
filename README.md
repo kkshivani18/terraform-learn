@@ -1,3 +1,3 @@
 # Learning about Terraform
 
-- Notes about Terraform
+- Learning about Terraform with Azure
