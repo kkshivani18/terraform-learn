@@ -8,4 +8,16 @@
 - Terraform code is written in HCL (HashiCorp Configuration Language) language.
 - For writing code, we need to know the basic structure of a Terraform configuration file and how to define resources using the HCL language.
 
+## Core files
+- main.tf - The main configuration file where you define resources.
+- variables.tf - Store input variables to make your configuration reusable.
+- outputs.tf - Extract values from resources for external use.
+- backend.tf - Configure remote backends to store state files (e.g., Azure Blob Storage).
+
+### Terraform State
+- .tfstate file tracks the current state of your infrastructure.
+- Ensures Terraform knows what exists in your infrastructure to avoid duplications.
+- Use a remote backend for production environments.
+- Encrypt state files when stored remotely.
+
 
