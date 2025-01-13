@@ -81,7 +81,7 @@
 - Modules provide a way to abstract complex configurations and make them reusable in different environments or projects.
 - It promotes DRY (Don't Repeat Yourself) principles.
 
-**How to Write a Module in Terraform?**
+**How to Write a Module in Terraform?** `\n`
 *module consists of*:
 - Input Variables (variables.tf): Allow customization of the module.
 - Resources (main.tf): Define the resources that the module creates.
