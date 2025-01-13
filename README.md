@@ -10,9 +10,9 @@
 
 ## Core files
 - main.tf - The main configuration file where you define resources.
-          - Example: Create an Azure Resource Group and a Storage Account.
+          - E.g.: Create an Azure Resource Group and a Storage Account.
   ```hcl
-    provider "azurerm" {
+  provider "azurerm" {
   features {}
   }
 
@@ -30,14 +30,34 @@
   }
   
 - variables.tf - Store input variables to make your configuration reusable.
+  ```hcl
+     variable "location" {
+     default = "East US"
+     description = "The Azure region to deploy resources"
+  }
 
-  
+     variable "resource_group_name" {
+     type        = string
+     description = "The name of the resource group"
+  }
+
 - outputs.tf - Extract values from resources for external use.
-
+  ```hcl
+  output "storage_account_name" {
+  value = azurerm_storage_account.example.name
+  }
   
 - backend.tf - Configure remote backends to store state files (e.g., Azure Blob Storage).
-
-  
+             - E.g. Azure Blob Storage
+  ```hcl
+     terraform {
+     backend "azurerm" {
+     resource_group_name  = "terraform-backend-rg"
+     storage_account_name = "terraformstate123"
+     container_name       = "tfstate"
+     key                  = "terraform.tfstate"
+     }
+  }
 
 ### Terraform State
 - .tfstate file tracks the current state of your infrastructure.
