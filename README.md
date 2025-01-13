@@ -9,7 +9,7 @@
 - For writing code, we need to know the basic structure of a Terraform configuration file and how to define resources using the HCL language.
 
 ## Core files
-- **main.tf**:
+#### *main.tf*:
 - The main configuration file where you define resources.
 - E.g.: Create an Azure Resource Group and a Storage Account.
   
