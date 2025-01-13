@@ -68,10 +68,21 @@
      }
   }
 
-### Terraform State
+## Terraform State
 - .tfstate file tracks the current state of your infrastructure.
 - Ensures Terraform knows what exists in your infrastructure to avoid duplications.
 - Use a remote backend for production environments.
 - Encrypt state files when stored remotely.
 
+## Terraform Modules: Reusable Components
+- In Terraform, modules are a way to organize and reuse infrastructure code.
+- A module is simply a container for multiple resources that are used together.
+- By using modules, you can group related resources into a logical unit and reuse that unit in different configurations.
+- Modules provide a way to abstract complex configurations and make them reusable in different environments or projects.
+- It promotes DRY (Don't Repeat Yourself) principles.
 
+**How to Write a Module in Terraform?**
+*module consists of*:
+Input Variables (variables.tf): Allow customization of the module.
+Resources (main.tf): Define the resources that the module creates.
+Outputs (outputs.tf): Expose the results of the module’s resources to be used by other parts of the Terraform configuration.
