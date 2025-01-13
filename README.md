@@ -9,6 +9,7 @@
 - For writing code, we need to know the basic structure of a Terraform configuration file and how to define resources using the HCL language.
 
 ## Core files
+
 ### *main.tf*:
 - The main configuration file where you define resources.
 - E.g.: Create an Azure Resource Group and a Storage Account.
@@ -31,7 +32,9 @@
     account_replication_type = "LRS"
   }
   
-- variables.tf - Store input variables to make your configuration reusable.
+### *variables.tf*:
+- Store input variables to make your configuration reusable.
+  
   ```hcl
      variable "location" {
      default = "East US"
@@ -43,14 +46,18 @@
      description = "The name of the resource group"
   }
 
-- outputs.tf - Extract values from resources for external use.
+### *outputs.tf*:
+- Extract values from resources for external use.
+
   ```hcl
   output "storage_account_name" {
   value = azurerm_storage_account.example.name
   }
   
-- backend.tf - Configure remote backends to store state files (e.g., Azure Blob Storage).
-             - E.g. Azure Blob Storage
+### *backend.tf*:
+- Configure remote backends to store state files.
+- E.g. Azure Blob Storage.
+
   ```hcl
      terraform {
      backend "azurerm" {
