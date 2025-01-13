@@ -11,6 +11,7 @@
 ## Core files
 - main.tf - The main configuration file where you define resources.
           - E.g.: Create an Azure Resource Group and a Storage Account.
+  
   ```hcl
   provider "azurerm" {
   features {}
