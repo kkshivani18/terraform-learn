@@ -3,7 +3,7 @@
 - Install terraform in your local machine to work with it and setup an account with azure.
 - For setting up account with azure, you can take advantage Azure Student Account or Free tier for this purpose.
 
-##*What is Terraform?*  
+*What is Terraform?*  
 - Terraform is a tool that helps us create, manage and organize infrastructure (like servers, databases and networks) using code.
 - Instead of manually setting up everything, we write simple scripts (called "Terraform configuration files") to tell Terraform what we want, and it does the setup for us.
 
