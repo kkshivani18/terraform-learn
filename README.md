@@ -57,7 +57,9 @@
   output "storage_account_name" {
   value = azurerm_storage_account.example.name
   }
-  
+
+![Deploying resources on Azure using Terraform with Visual Studio Code](https://github.com/user-attachments/assets/932a6e2b-47c1-4433-a95c-fa3d0346d22f)
+
 ### *backend.tf*:
 - Configure remote backends to store state files.
 - E.g. Azure Blob Storage.
