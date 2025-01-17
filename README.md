@@ -12,6 +12,8 @@
 - Terraform code is written in HCL (HashiCorp Configuration Language) language.
 - For writing code, we need to know the basic structure of a Terraform configuration file and how to define resources using the HCL language.
 
+![Terraform Architecture](https://github.com/user-attachments/assets/dc3846b4-bd60-4e9e-9e35-876ef5ffdece)  
+
 ## Core files
 
 ### *main.tf*:
