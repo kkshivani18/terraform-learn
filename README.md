@@ -204,68 +204,69 @@ e.g. Creating and Switching Workspaces
       }
     }
 
-  **Applying Provisioners at Creation and Destruction**
+
+  ### Applying Provisioners at Creation and Destruction
   - Provisioners can be configured to run during different phases of the resource lifecycle:
 
-  *Creation-Time Provisioners*
-  - Usage: Run commands after the resource is created.
-  
-    ```hcl
-      resource "azurerm_virtual_machine" "example" {
-        # ... other configuration ...
-      
-        provisioner "remote-exec" {
-          inline = [
-            "echo 'Resource created'"
-          ]
-        }
-      }
+    *Creation-Time Provisioners*
+    - Usage: Run commands after the resource is created.
     
-  *Destruction-Time Provisioners*
-  - Usage: Run commands before the resource is destroyed.
-  
-    ```hcl
-      resource "azurerm_virtual_machine" "example" {
-        # ... other configuration ...
-      
-        provisioner "local-exec" {
-          when    = "destroy"
-          command = "echo 'Resource destroyed'"
+      ```hcl
+        resource "azurerm_virtual_machine" "example" {
+          # ... other configuration ...
+        
+          provisioner "remote-exec" {
+            inline = [
+              "echo 'Resource created'"
+            ]
+          }
         }
-      }
+      
+    *Destruction-Time Provisioners*
+    - Usage: Run commands before the resource is destroyed.
+    
+      ```hcl
+        resource "azurerm_virtual_machine" "example" {
+          # ... other configuration ...
+        
+          provisioner "local-exec" {
+            when    = "destroy"
+            command = "echo 'Resource destroyed'"
+          }
+        }
+    
+  **Failure Handling for Provisioners**
+    - Handling provisioner failures is crucial to ensure reliable infrastructure provisioning. 
+    - Terraform provides several mechanisms to control provisioner behavior on failure:
   
-**Failure Handling for Provisioners**
-  - Handling provisioner failures is crucial to ensure reliable infrastructure provisioning. 
-  - Terraform provides several mechanisms to control provisioner behavior on failure:
-
-    *Retry Mechanisms:*
-    - Defines the number of retries and delay between retries for provisioner execution.
+      *Retry Mechanisms:*
+      - Defines the number of retries and delay between retries for provisioner execution.
+        ```hcl
+          provisioner "remote-exec" {
+            retry      = 5
+            retry_wait = 10
+            inline = [
+              "command_that_might_fail"
+            ]
+          }
+        
+      *Timeouts:*
+      - Specifies the maximum time to wait for a provisioner to complete.
+        ```hcl
+          provisioner "remote-exec" {
+            timeout = "5m"
+            inline = [
+              "long_running_command"
+            ]
+          }
+        
+      *on_failure Attribute*
+      - Defines the behavior when a provisioner fails (continue or fail).
       ```hcl
         provisioner "remote-exec" {
-          retry      = 5
-          retry_wait = 10
+          on_failure = "continue"
           inline = [
             "command_that_might_fail"
           ]
         }
-      
-    *Timeouts:*
-    - Specifies the maximum time to wait for a provisioner to complete.
-      ```hcl
-        provisioner "remote-exec" {
-          timeout = "5m"
-          inline = [
-            "long_running_command"
-          ]
-        }
-      
-    *on_failure Attribute*
-    - Defines the behavior when a provisioner fails (continue or fail).
-    ```hcl
-      provisioner "remote-exec" {
-        on_failure = "continue"
-        inline = [
-          "command_that_might_fail"
-        ]
-      }
 
