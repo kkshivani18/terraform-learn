@@ -102,6 +102,16 @@
 - A Terraform module is a set of Terraform configuration files in a single directory.
 - Even a simple configuration consisting of a single directory with one or more .tf files is a module. When you run Terraform commands directly from such a directory, it is considered the root module.
 
-![terraform modules](https://github.com/user-attachments/assets/ead71719-ecd1-4b06-88b6-cd357d0d471b)
+![terraform modules](https://github.com/user-attachments/assets/ead71719-ecd1-4b06-88b6-cd357d0d471b)  
 
 ## State Management 
+- When managing infrastructure with Terraform, the state file is a crucial component. It tracks the current state of your resources, ensuring Terraform knows what already exists and what needs to be created, updated, or deleted.
+
+*What is Terraform State?*
+- Purpose: The state file keeps a record of all the resources Terraform manages. It acts as a source of truth for your infrastructure.
+- File Format: Terraform state is typically stored in a file called terraform.tfstate.
+- Location: By default, the state file is stored locally in your project directory, but it can be configured to use remote backends.
+
+**Remote State Management**
+- Storing the state file remotely has several benefits, including collaboration, security, and reliability.  
+  e.g. Azure Blob Storage: backend "azurerm" { ... }
