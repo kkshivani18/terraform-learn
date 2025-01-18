@@ -115,3 +115,50 @@
 **Remote State Management**
 - Storing the state file remotely has several benefits, including collaboration, security, and reliability.  
   e.g. Azure Blob Storage: backend "azurerm" { ... }
+  ```hcl
+  terraform {
+    backend "azurerm" {
+      resource_group_name   = "myResourceGroup"
+      storage_account_name  = "mystorageaccount"
+      container_name        = "tfstate"
+      key                   = "terraform.tfstate"
+    }
+  }
+
+**State Locking**
+- State locking prevents multiple users from making concurrent changes to the state file, avoiding potential conflicts and ensuring data integrity.
+- e.g. Using Azure Blob Storage for State Locking  
+       Azure Blob Storage supports state locking natively. No additional configuration is required beyond setting up the backend.
+
+**State Encryption**
+- Encrypting state files is essential to protect sensitive data. Remote backends like AWS S3 and Azure Blob Storage provide encryption options.
+e.g. Enabling Encryption in Azure Blob Storage
+     Azure Blob Storage encrypts data at rest and in transit by default. Ensure you configure your backend to use these security features.
+
+### Advanced State Management
+
+**State Workspaces**
+- Workspaces allow you to manage multiple state files for different environments (e.g., dev, test, prod) within the same Terraform configuration.
+e.g. Creating and Switching Workspaces
+
+  ```bash
+    # Create a new workspace
+    terraform workspace new dev
+    
+    # Switch to an existing workspace
+    terraform workspace select dev
+  
+**State Manipulation**
+- Sometimes, we might need to modify the state file directly. Terraform provides several commands to help with this:
+  - terraform state list: List all resources in the state file.
+  - terraform state show <resource>: Show detailed information about a specific resource.
+  - terraform state mv <source> <destination>: Move a resource from one state to another.
+  - terraform state rm <resource>: Remove a resource from the state file.
+
+*Good Practices for State Management:*
+
+- Use Remote Backends: Always use remote backends for production environments to enhance collaboration and security.
+- Enable State Locking: Prevent concurrent changes to the state file to avoid conflicts.
+- Encrypt State Files: Protect sensitive data by encrypting state files at rest and in transit.
+- Use Workspaces: Separate state files for different environments using workspaces.
+- Backup State Files: Regularly backup your state files to prevent data loss.
