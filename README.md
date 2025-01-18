@@ -12,7 +12,7 @@
 - Terraform code is written in HCL (HashiCorp Configuration Language) language.
 - For writing code, we need to know the basic structure of a Terraform configuration file and how to define resources using the HCL language.
 
-![Terraform Architecture](https://github.com/user-attachments/assets/cfb16243-9a6e-40cd-a0b8-6c0aae76947f)   
+![Terraform Architecture](https://github.com/user-attachments/assets/e7cee54c-377d-4c15-8e4f-a70f6397b79d)    
 
 ## Core files
 
@@ -60,7 +60,7 @@
   value = azurerm_storage_account.example.name
   }
 
-![Deploying resources on Azure using Terraform with Visual Studio Code](https://github.com/user-attachments/assets/932a6e2b-47c1-4433-a95c-fa3d0346d22f)
+![Deploying resources on Azure using Terraform](https://github.com/user-attachments/assets/cfb16243-9a6e-40cd-a0b8-6c0aae76947f)
 
 ### *backend.tf*:
 - Configure remote backends to store state files.
