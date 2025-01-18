@@ -192,6 +192,7 @@ e.g. Creating and Switching Workspaces
     }
   }
 
+
 - Local-exec Provisioner
   - Purpose: Executes commands on the machine where Terraform is run.
   - Use Case: Used for tasks like running local scripts, notifying external services, or performing local post-processing.
