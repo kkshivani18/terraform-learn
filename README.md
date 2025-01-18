@@ -94,5 +94,14 @@
 - Input Variables (variables.tf): Allow customization of the module.
 - Resources (main.tf): Define the resources that the module creates.
 - Outputs (outputs.tf): Expose the results of the module’s resources to be used by other parts of the Terraform configuration.
+- When we run terraform commands from within the minimal-module directory, the contents of that directory are considered the root module.
+
+![root module](https://github.com/user-attachments/assets/fd713b37-ff26-4787-8f1f-2f6272f4324f)
+
+**Module in simple words is**
+- A Terraform module is a set of Terraform configuration files in a single directory.
+- Even a simple configuration consisting of a single directory with one or more .tf files is a module. When you run Terraform commands directly from such a directory, it is considered the root module.
+
+![terraform modules](https://github.com/user-attachments/assets/ead71719-ecd1-4b06-88b6-cd357d0d471b)
 
 ## State Management 
