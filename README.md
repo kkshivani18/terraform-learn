@@ -94,3 +94,5 @@
 - Input Variables (variables.tf): Allow customization of the module.
 - Resources (main.tf): Define the resources that the module creates.
 - Outputs (outputs.tf): Expose the results of the module’s resources to be used by other parts of the Terraform configuration.
+
+## State Management 
