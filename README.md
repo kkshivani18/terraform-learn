@@ -18,7 +18,7 @@
 
 ### *main.tf*:
 - The main configuration file where you define resources.
-- E.g.: Create an Azure Resource Group and a Storage Account.
+- e.g.: Create an Azure Resource Group and a Storage Account.
   
   ```hcl
   provider "azurerm" {
@@ -64,7 +64,7 @@
 
 ### *backend.tf*:
 - Configure remote backends to store state files.
-- E.g. Azure Blob Storage.
+- e.g. Azure Blob Storage.
 
   ```hcl
      terraform {
@@ -282,5 +282,9 @@ e.g. Creating and Switching Workspaces
 **Creating a New Workspace**
 - To create a new workspace, use the terraform workspace new command followed by the name of the workspace:
     ```bash
-        terraform workspace new <workspace_name>  
-
+    terraform workspace new <workspace_name>  
+e.g  
+    ```bash 
+    terraform workspace new dev
+    terraform workspace new staging
+    terraform workspace new prod
