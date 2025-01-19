@@ -284,14 +284,3 @@ e.g. Creating and Switching Workspaces
   ```bash
   terraform workspace new <workspace_name>   
 
-**Switching Between Workspaces**
-- To switch between existing workspaces, use the terraform workspace select command followed by the name of the workspace:
-
-  ```bash
-  terraform workspace select <workspace_name>
-e.g.
-  ```bash
-    terraform workspace select dev
-    terraform workspace select prod
-    Listing All Workspaces
-
