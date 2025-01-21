@@ -310,9 +310,8 @@ e.g. Creating and Switching Workspaces
         terraform workspace list
       ```
 
-  **Using Workspaces for Environment Management**
-  Workspaces streamline environment management by providing a clear and organized way to handle multiple environments. Here are some benefits and practices for using   
-  workspaces:
+  ### **Using Workspaces for Environment Management**  
+  Workspaces streamline environment management by providing a clear and organized way to handle multiple environments.  
 
   **Benefits of Using Workspaces**
     - Isolation: Each workspace has its own state file, ensuring that changes in one environment do not affect others.
