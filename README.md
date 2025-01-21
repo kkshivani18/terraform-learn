@@ -276,7 +276,7 @@ e.g. Creating and Switching Workspaces
 - Terraform workspaces provide a mechanism to manage different environments (e.g. development, staging, production) within a single configuration.
 - They help isolate configurations by maintaining separate state files for each environment, ensuring changes in one environment do not affect others.  
 
-### **Creating and Switching Between Workspaces**
+#### **Creating and Switching Between Workspaces**
 - Creating and managing workspaces in Terraform is straightforward. Here's how you can create new workspaces and switch between them:
 
 **Creating a New Workspace**
