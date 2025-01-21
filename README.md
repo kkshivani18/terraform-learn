@@ -278,7 +278,7 @@ e.g. Creating and Switching Workspaces
 - They help isolate configurations by maintaining separate state files for each environment, ensuring changes in one environment do not affect others.  
 
   ### **Creating and Switching Between Workspaces**  
-  - Creating and managing workspaces in Terraform is straightforward. Here's how you can create new workspaces and switch between them:
+  - Creating and managing workspaces in Terraform is straightforward.   
   
     **Creating a New Workspace**  
     - To create a new workspace, use the `terraform workspace new` command followed by the name of the workspace:  
@@ -320,11 +320,11 @@ e.g. Creating and Switching Workspaces
   
   **Example Configuration Using Workspaces:**
     **Create Workspaces:**
-      ```bash
+    ```bash
       terraform workspace new dev
       terraform workspace new staging
       terraform workspace new prod
-      ```
+    ```
       
     **Switch to the Desired Workspace:**
     ```bash
