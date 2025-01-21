@@ -280,16 +280,17 @@ e.g. Creating and Switching Workspaces
   - Creating and managing workspaces in Terraform is straightforward. Here's how you can create new workspaces and switch between them:
   
     **Creating a New Workspace**  
-    - To create a new workspace, use the `terraform workspace new` command followed by the name of the workspace:
+    - To create a new workspace, use the `terraform workspace new` command followed by the name of the workspace:  
         ```bash
         terraform workspace new <workspace_name>
-        ```
-        e.g.
-        ```bash
+        ```  
+        e.g.  
+        ```bash    
         terraform workspace new dev
         terraform workspace new staging
         terraform workspace new prod
-        ```
+        ```  
+        
     **Switching Between Workspaces**  
     To switch between existing workspaces, use the terraform workspace select command followed by the name of the workspace:
     
