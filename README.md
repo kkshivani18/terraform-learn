@@ -271,15 +271,15 @@ e.g. Creating and Switching Workspaces
           ]
         }  
 
-## Managing Environments with Workspaces
+## Managing Environments with Workspaces  
 
 - Terraform workspaces provide a mechanism to manage different environments (e.g. development, staging, production) within a single configuration.
 - They help isolate configurations by maintaining separate state files for each environment, ensuring changes in one environment do not affect others.  
 
-  ### **Creating and Switching Between Workspaces**
+  ### **Creating and Switching Between Workspaces**  
   - Creating and managing workspaces in Terraform is straightforward. Here's how you can create new workspaces and switch between them:
   
-    **Creating a New Workspace**
+    **Creating a New Workspace**  
     - To create a new workspace, use the `terraform workspace new` command followed by the name of the workspace:
         ```bash
         terraform workspace new <workspace_name>
@@ -290,7 +290,7 @@ e.g. Creating and Switching Workspaces
         terraform workspace new staging
         terraform workspace new prod
         ```
-    **Switching Between Workspaces**
+    **Switching Between Workspaces**  
     To switch between existing workspaces, use the terraform workspace select command followed by the name of the workspace:
     
       ```bash
@@ -301,45 +301,44 @@ e.g. Creating and Switching Workspaces
         terraform workspace select dev
         terraform workspace select prod
       ```
-    **Listing All Workspaces**
+    **Listing All Workspaces**  
     To list all available workspaces, use the terraform workspace list command:
     
       ```bash
         terraform workspace list
       ```
 
-Using Workspaces for Environment Management
-Workspaces streamline environment management by providing a clear and organized way to handle multiple environments. Here are some benefits and practices for using workspaces:
+  **Using Workspaces for Environment Management**
+  Workspaces streamline environment management by providing a clear and organized way to handle multiple environments. Here are some benefits and practices for using   
+  workspaces:
 
-Benefits of Using Workspaces
-Isolation: Each workspace has its own state file, ensuring that changes in one environment do not affect others.
-
-Consistency: Workspaces promote consistent infrastructure deployment across different environments.
-
-Simplicity: Simplifies the management of multiple environments without duplicating code.
-
-Example Configuration Using Workspaces
-Here's an example of how you can use workspaces to manage different environments:
-
-Create Workspaces:
-
-bash
-terraform workspace new dev
-terraform workspace new staging
-terraform workspace new prod
-Switch to the Desired Workspace:
-
-bash
-terraform workspace select dev
-Apply Configuration in the Workspace:
-
-bash
-terraform apply
-Switch to Another Workspace and Apply Configuration:
-
-bash
-terraform workspace select staging
-terraform apply
-By following these steps, you can ensure that each environment is managed independently with its own state file.
+  **Benefits of Using Workspaces**
+    - Isolation: Each workspace has its own state file, ensuring that changes in one environment do not affect others.
+    - Consistency: Workspaces promote consistent infrastructure deployment across different environments.
+    - Simplicity: Simplifies the management of multiple environments without duplicating code.
+  
+  **Example Configuration Using Workspaces:**
+    **Create Workspaces:**
+      ```bash
+      terraform workspace new dev
+      terraform workspace new staging
+      terraform workspace new prod
+      ```
+      
+    **Switch to the Desired Workspace:**
+    ```bash
+    terraform workspace select dev
+    ```
+    
+    **Apply Configuration in the Workspace:**
+    ```bash
+    terraform apply
+    ```
+    
+    **Switch to Another Workspace and Apply Configuration:**
+    ```bash
+    terraform workspace select staging
+    terraform apply
+    ```
           
 
