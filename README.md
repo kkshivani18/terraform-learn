@@ -281,6 +281,11 @@ e.g. Creating and Switching Workspaces
 
 **Creating a New Workspace**
 - To create a new workspace, use the terraform workspace new command followed by the name of the workspace:  
-  ```bash
-  terraform workspace new <workspace_name>   
+    ```bash
+    terraform workspace new <workspace_name>  
+e.g.   
+    ```bash  
+      terraform
+
+      
 
