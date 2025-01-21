@@ -172,7 +172,8 @@ e.g. Creating and Switching Workspaces
 
 - Remote-exec Provisioner
   - Purpose: Executes commands on remote servers.
-  - Use Case: Typically used for configuration management or running deployment scripts on remote instances.  
+  - Use Case: Typically used for configuration management or running deployment scripts on remote instances.
+      
   ```bash
     resource "azurerm_virtual_machine" "example" {
     # ... other configuration ...
