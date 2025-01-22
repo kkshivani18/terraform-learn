@@ -141,7 +141,7 @@ e.g. Enabling Encryption in Azure Blob Storage
 - Workspaces allow you to manage multiple state files for different environments (e.g., dev, test, prod) within the same Terraform configuration.
 e.g. Creating and Switching Workspaces
 
-  ```bash
+  ```hcl
     # Create a new workspace
     terraform workspace new dev
     
@@ -174,7 +174,7 @@ e.g. Creating and Switching Workspaces
   - Purpose: Executes commands on remote servers.
   - Use Case: Typically used for configuration management or running deployment scripts on remote instances.
       
-  ```bash
+  ```hcl
     resource "azurerm_virtual_machine" "example" {
     # ... other configuration ...
   
@@ -282,11 +282,11 @@ e.g. Creating and Switching Workspaces
   
     **Creating a New Workspace**  
     - To create a new workspace, use the `terraform workspace new` command followed by the name of the workspace:  
-        ```bash
+        ```hcl
         terraform workspace new <workspace_name>
         ```  
         e.g.  
-        ```bash    
+        ```hcl    
         terraform workspace new dev
         terraform workspace new staging
         terraform workspace new prod
@@ -295,18 +295,18 @@ e.g. Creating and Switching Workspaces
     **Switching Between Workspaces**  
     To switch between existing workspaces, use the terraform workspace select command followed by the name of the workspace:
     
-      ```bash
+      ```hcl
         terraform workspace select <workspace_name>
       ```
     e.g.
-      ```bash
+      ```hcl
         terraform workspace select dev
         terraform workspace select prod
       ```
     **Listing All Workspaces**  
     To list all available workspaces, use the terraform workspace list command:
     
-      ```bash
+      ```hcl
         terraform workspace list
       ```
 
@@ -320,24 +320,24 @@ e.g. Creating and Switching Workspaces
   
   **Example Configuration Using Workspaces:**
     **Create Workspaces:**
-    ```bash
+    ```hcl
       terraform workspace new dev
       terraform workspace new staging
       terraform workspace new prod
     ```
       
     **Switch to the Desired Workspace:**
-    ```bash
+    ```hcl
     terraform workspace select dev
     ```
     
     **Apply Configuration in the Workspace:**
-    ```bash
+    ```hcl
     terraform apply
     ```
     
     **Switch to Another Workspace and Apply Configuration:**
-    ```bash
+    ```hcl
     terraform workspace select staging
     terraform apply
     ```
