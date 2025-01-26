@@ -376,5 +376,5 @@ e.g. Creating and Switching Workspaces
       default = data.azurerm_key_vault_secret.client_secret.value  
     }  
     ```
-
-    
+      - Use role-based access control (RBAC) in Azure to limit access to the storage account.
+      - Enable blob-level encryption in Azure Storage.
