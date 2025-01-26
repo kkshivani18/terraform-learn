@@ -344,14 +344,37 @@ e.g. Creating and Switching Workspaces
 
 ## Security and Advanced Topic
 - Managing `sensitive` information in Terraform configurations is crucial, especially when dealing with Azure.
-  1. Use the sensitive Attribute
-  Terraform allows marking variables and outputs as sensitive using the sensitive attribute. When marked as sensitive:
-  - Terraform will not display their values in the console output.
-  - The values will also not be written in plain text to the state file.
-  ``` hcl
-  variable "client_secret" {  
-  type        = string  
-  sensitive   = true  
-  description = "Azure AD Application Client Secret"  
-  }  
-  ```
+  - Use the sensitive Attribute
+    Terraform allows marking variables and outputs as sensitive using the sensitive attribute. When marked as sensitive:
+    - Terraform will not display their values in the console output.
+    - The values will also not be written in plain text to the state file.
+    ``` hcl
+    variable "client_secret" {  
+    type        = string  
+    sensitive   = true  
+    description = "Azure AD Application Client Secret"  
+    }  
+    ```
+
+- Use Azure Key Vault for Secret Management
+  - Azure Key Vault is a dedicated service for storing secrets, keys, and certificates securely. You can configure Terraform to retrieve secrets directly from Azure Key Vault.
+    Steps:
+      - Create an Azure Key Vault and add secrets (e.g. Client ID, Client Secret).
+      - Use the azurerm_key_vault_secret data source to fetch secrets into your Terraform configuration.
+    ``` hcl
+    data "azurerm_key_vault" "example" {  
+    name                = "my-key-vault"  
+    resource_group_name = "my-resource-group"  
+    }  
+    
+    data "azurerm_key_vault_secret" "client_secret" {  
+      name         = "client-secret"  
+      key_vault_id = data.azurerm_key_vault.example.id  
+    }  
+    
+    variable "client_secret" {  
+      default = data.azurerm_key_vault_secret.client_secret.value  
+    }  
+    ```
+
+    
