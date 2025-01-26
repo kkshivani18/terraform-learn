@@ -341,5 +341,5 @@ e.g. Creating and Switching Workspaces
     terraform workspace select staging
     terraform apply
     ```
-          
 
+## Security and Advanced Topic
