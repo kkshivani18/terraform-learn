@@ -376,5 +376,28 @@ e.g. Creating and Switching Workspaces
       default = data.azurerm_key_vault_secret.client_secret.value  
     }  
     ```
-      - Use role-based access control (RBAC) in Azure to limit access to the storage account.
-      - Enable blob-level encryption in Azure Storage.
+
+- Use a Remote Backend for State Management
+  - Store the Terraform state file securely using a remote backend, such as Azure Blob Storage. Ensure encryption is enabled for the storage account to protect sensitive data.
+
+  ```hcl
+  terraform {  
+    backend "azurerm" {  
+      resource_group_name  = "terraform-backend-rg"  
+      storage_account_name = "terraformstate123"  
+      container_name       = "tfstate"  
+      key                  = "terraform.tfstate"  
+    }  
+  }
+  ```
+  - Use role-based access control (RBAC) in Azure to limit access to the storage account.
+   - Enable blob-level encryption in Azure Storage.
+
+- Use Environment Variables for Sensitive Data
+  - Define sensitive data, such as client secrets and subscription IDs, as environment variables. Terraform can then read them securely without hardcoding them into the configuration files.
+    ```bash
+    set TF_VAR_cosmos_db_connection_string=<cosmos_db_connection_string>
+    ```
+    ```bash
+    echo %TF_VAR_cosmos_db_connection_string%
+    ```
