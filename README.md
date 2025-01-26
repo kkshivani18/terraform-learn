@@ -343,3 +343,15 @@ e.g. Creating and Switching Workspaces
     ```
 
 ## Security and Advanced Topic
+- Managing `sensitive` information in Terraform configurations is crucial, especially when dealing with Azure.
+  1. Use the sensitive Attribute
+  Terraform allows marking variables and outputs as sensitive using the sensitive attribute. When marked as sensitive:
+  - Terraform will not display their values in the console output.
+  - The values will also not be written in plain text to the state file.
+  ``` hcl
+  variable "client_secret" {  
+  type        = string  
+  sensitive   = true  
+  description = "Azure AD Application Client Secret"  
+  }  
+  ```
